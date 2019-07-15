@@ -117,7 +117,7 @@
 
 
 
-(#readme) ## tf.Session  
+ ## tf.Session  
 用于运行TensorFlow操作的类。  
 Session对象封装了执行Operation对象的环境，并评估了Tensor对象。例如：  
 ```
@@ -131,5 +131,5 @@ sess = tf.compat.v1.Session()
 
 # Evaluate the tensor `c`.
 print(sess.run(c))
-```
+```(#readme)
 
