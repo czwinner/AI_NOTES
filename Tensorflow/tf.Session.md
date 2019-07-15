@@ -1,4 +1,4 @@
-[tf.Session](#tf.Session)
+[tf.Session](#tfSession)
 
 1  
 11
