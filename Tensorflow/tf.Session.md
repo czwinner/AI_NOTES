@@ -1,4 +1,4 @@
-[tf.Session](#readme)
+[tf.Session](#tf.Session)
 
 1  
 11
