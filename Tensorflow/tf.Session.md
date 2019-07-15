@@ -1,4 +1,4 @@
-[tf.Session](#tf.Session)
+[tf.Session](##tf.Session)
 
 1  
 11
@@ -159,5 +159,5 @@ sess = tf.compat.v1.Session()
 print(sess.run(c))
 ```
 
-(#readme)
+
 
