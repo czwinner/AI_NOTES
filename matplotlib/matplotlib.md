@@ -28,7 +28,7 @@ plt.rcParams [rcParams] (#rcParams)
 1  
 
               
-<div id="rcParams"></div>
+###rcParams
 
 ```
 plt.rcParams['figure.figsize'] = (8.0, 4.0) # 设置figure_size尺寸  
