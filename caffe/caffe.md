@@ -30,14 +30,17 @@ transformer.set_raw_scale('data',255) #python图像[0,1],像caffeNet和AlexNet�
 transformer.set_channel_swap('data',(2,1,0)) #Caffe图片是BGR格式，而原始格式是RGB，所以要转化 
 ```
 
-方法：  
-preprocess(elf,in_,data)  
-作用:  
+**方法：**
+
+preprocess(self,in_,data)  
+**作用:**
+
 -调整通道  
 -将尺寸转换为KxHxW  
 -缩放原始输入（例如，从ImageNet模型的[0,1]到[0,255])  
 -减去平均值  
-参数:  
+**参数:**
+
 in_:要预处理的输入的blob的名称  
 data:(H'xW'xK) ndarray  
 返回:  
