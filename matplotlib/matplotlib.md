@@ -1,4 +1,4 @@
-plt.rcParams [rcParams] (#rcparams)
+plt.rcParams [raparams](#rcparams)
 <div id="rcparams"></div>
 
 ```
