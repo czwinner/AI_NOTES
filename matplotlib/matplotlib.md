@@ -1,4 +1,4 @@
-plt.rcParams (#1)
+plt.rcParams [rcParams] (#rcParams)
 <span id="1">
 ```
 plt.rcParams['figure.figsize'] = (8.0, 4.0) # 设置figure_size尺寸  
