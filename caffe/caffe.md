@@ -1,4 +1,4 @@
-[caffe.Net] (#caffe.Net)  
+[caffe.Net](#caffe.Net)  
 
 [caffe.set_mode_gpu()](#caffe.set_mode_gpu())  
 <div id="caffe.set_mode_gpu()"></div>
