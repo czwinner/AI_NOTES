@@ -6,7 +6,9 @@
 
 <div id="caffe.io.Transformer"></div>  
 caffe.io.Transformer:  
+
 转换输入再传入网络  
+
 例子:  
 
 ```  
