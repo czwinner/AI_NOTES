@@ -1,4 +1,4 @@
-plt.rcParams[rcParams](#rcParams)
+plt.rcParams[plt.rcParams](#rcParams)
 1  
 2  
 1  
