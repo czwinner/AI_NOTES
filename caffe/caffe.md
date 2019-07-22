@@ -2,13 +2,14 @@
 
 [caffe.Net](#caffe.Net)  
 
-[caffe.set_mode_gpu()](#caffe.set_mode_gpu())  
+[caffe.set_mode_gpu()](#caffe.set_mode_gpu()) 
+
 <div id="caffe.io.Transformer"></div>  
 caffe.io.Transformer:  
 转换输入再传入网络  
 例子:  
-```  
 
+```  
 transformer=caffe.io.Transformer({'data':net.blobs['data'].data.shape})  
 transformer.set_transpose('data',(2,0,1)) #python读取的图片格式HxWxC,需要转化为CxHxW  
 transformer.set_mean('data',mu) # 每个通道减去均值  
