@@ -6,6 +6,7 @@
 
 [caffe.set_mode_gpu()](#caffe.set_mode_gpu()) 
 
+<font color=#00ffff size=72>color=#00ffff</font>
 <div id="caffe.io.load_image"></div>
 
 **caffe.io.load_image**
