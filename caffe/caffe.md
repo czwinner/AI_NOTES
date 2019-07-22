@@ -5,7 +5,8 @@
 [caffe.set_mode_gpu()](#caffe.set_mode_gpu()) 
 
 <div id="caffe.io.Transformer"></div>  
-** caffe.io.Transformer: **  
+
+**caffe.io.Transformer:**  
 
 转换输入再传入网络  
 
