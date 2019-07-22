@@ -1,4 +1,4 @@
-plt.rcParams [->] (#rcParams)  
+plt.rcParams [rcParams] (#rcParams)  
 1  
 2  
 1  
