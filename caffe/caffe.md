@@ -23,8 +23,9 @@ transformer.set_channel_swap('data',(2,1,0)) #Caffe图片是BGR格式，而原�
 <div id="caffe.set_mode_gpu()"></div>
 caffe.set_mode_cpu()    #使用caffe的GPU模式
 
-<div id="caffe.Net"></div>  
-## caffe.Net  
+<div id="caffe.Net"></div>
+
+**caffe.Net**  
 
 加载模型数据  
 
