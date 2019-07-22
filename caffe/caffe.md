@@ -5,7 +5,7 @@
 [caffe.set_mode_gpu()](#caffe.set_mode_gpu()) 
 
 <div id="caffe.io.Transformer"></div>  
-**caffe.io.Transformer:  
+__caffe.io.Transformer:__  
 
 转换输入再传入网络  
 
@@ -23,7 +23,7 @@ transformer.set_channel_swap('data',(2,1,0)) #Caffe图片是BGR格式，而原�
 caffe.set_mode_cpu()    #使用caffe的GPU模式
 
 <div id="caffe.Net"></div>  
-**caffe.Net  
+__caffe.Net__  
 
 加载模型数据  
 
