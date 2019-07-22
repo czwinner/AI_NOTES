@@ -10,7 +10,7 @@
 
 **caffe.io.load_image**
 
-caffe.io.load_image()读进来是RGB格式和0~1(float),所以在进行特征提取之前要在transformer中设置transformer.set_raw_scale('data',255)  
+caffe.io.load_image()读进来是RGB格式和0~1(float),所以在进行特征提取之前要在transformer中设置transformer.set_raw_scale('data',255)(缩放至0~255）  
 以及transformer.set_channel_swap('data',(2,1,0))(将RGB变换到BGR)
 
 <div id="caffe.io.Transformer"></div>  
