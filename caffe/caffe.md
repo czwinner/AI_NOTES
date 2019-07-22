@@ -1,5 +1,7 @@
-[caffe.io.Transformer](#caffe.io.Transformer)
+[caffe.io.Transformer](#caffe.io.Transformer)  
+
 [caffe.Net](#caffe.Net)  
+
 [caffe.set_mode_gpu()](#caffe.set_mode_gpu())  
 <div id="caffe.io.Transformer"></div>  
 caffe.io.Transformer:  
