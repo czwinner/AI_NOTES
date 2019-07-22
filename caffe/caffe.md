@@ -18,7 +18,7 @@ caffe.io.load_image()读进来是RGB格式和0~1(float),所以在进行特征提
 
 **caffe.io.Transformer:**  
 
-<font color=red>转换输入再传入网络</font>  
+<font color="red">转换输入再传入网络</font>  
 
 例子:  
 
