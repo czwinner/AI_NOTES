@@ -63,4 +63,5 @@ net = caffe.Net(
         caffe_model_path,       # 训练好模型路径
         caffe.TEST              # 设置为测试阶段
         )
+output = net.forward() #网络前向传播
 ```
