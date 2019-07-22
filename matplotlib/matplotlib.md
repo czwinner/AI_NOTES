@@ -1,20 +1,32 @@
-plt.rcParams [->](#rcparams)  
-  
-    
-      
-        
-          
-            
-            
-            
-            
-            
-            
-            
-              
-              
-              
-              
+[plt.rcParams] (#rcparams)  
+1  
+2  
+1  
+1  
+1  
+1  
+1  
+1  
+1  
+1  
+1  
+1  
+1  
+1  
+1  
+1  
+1  
+1  
+1  
+1  
+1  
+1  
+1  
+1  
+1  
+1  
+1  
+
               
 <div id="rcparams"></div>
 
