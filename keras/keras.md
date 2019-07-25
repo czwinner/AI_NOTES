@@ -1,4 +1,4 @@
-[# keras.layers.Dense](#dense)
+[keras.layers.Dense](#dense)
 # keras Sequential模型
 
 
