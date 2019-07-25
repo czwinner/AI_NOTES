@@ -16,7 +16,7 @@ ax.grid(color=’r’, linestyle=’-‘, linewidth=2) # 设置背景网格线�
 ## plt.imshow
 
 plt.imshow(X,cmap=None)<br>
-参数:<br>
+**参数:**<br>
 X:要绘制的图像或数组<br>
 camp:颜色图谱(colormap),默认绘制为RGB颜色空间<br>
 用的比较多的有gray,jet等，如<br>
@@ -26,7 +26,7 @@ plt.imshow(image,cmap=plt.cm.jet)
 ```
 **返回**:
 一个AxesImage对象<br>
-注意：plt.imshow()函数负责对图像进行处理，但是不能显示，其后跟着plt.show()才能显示出来<br>
+**注意：**plt.imshow()函数负责对图像进行处理，但是不能显示，其后跟着plt.show()才能显示出来<br>
 
 <div id="rcParams"></div> 
 
