@@ -1,5 +1,6 @@
+[# keras.layers.Dense](#dense)
 # keras Sequential模型
-[#keras.layers.Dense](#dense)
+
 
 Sequential模型是层的线性堆栈
 可以通过将层实例列表传递给构造函数来创建Sequential模型
@@ -41,13 +42,13 @@ model.add(Dense(32, input_shape=(16,)))
 model.add(Dense(32))
 ```
 参数:<br>
-*units:正整数，输出空间维度。<br>
-*activation: 激活函数 (详见 activations)。 若不指定，则不使用激活函数 <br>
-*use_bias: 布尔值，该层是否使用偏置向量。<br>
-*kernel_initializer: kernel 权值矩阵的初始化器<br>
-*bias_initializer: 偏置向量的初始化器<br>
-*kernel_regularizer: 运用到 kernel 权值矩阵的正则化函数<br>
-*bias_regularizer: 运用到偏置向的的正则化函数<br>
-*activity_regularizer: 运用到层的输出的正则化函数<br>
-*kernel_constraint: 运用到 kernel 权值矩阵的约束函数<br>
-*bias_constraint: 运用到偏置向量的约束函数<br>
+* units:正整数，输出空间维度。<br>
+* activation: 激活函数 (详见 activations)。 若不指定，则不使用激活函数 <br>
+* use_bias: 布尔值，该层是否使用偏置向量。<br>
+* kernel_initializer: kernel 权值矩阵的初始化器<br>
+* bias_initializer: 偏置向量的初始化器<br>
+* kernel_regularizer: 运用到 kernel 权值矩阵的正则化函数<br>
+* bias_regularizer: 运用到偏置向的的正则化函数<br>
+* activity_regularizer: 运用到层的输出的正则化函数<br>
+* kernel_constraint: 运用到 kernel 权值矩阵的约束函数<br>
+* bias_constraint: 运用到偏置向量的约束函数<br>
