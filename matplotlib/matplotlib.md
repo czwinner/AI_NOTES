@@ -10,14 +10,14 @@ plt.rcParams['image.cmap'] = 'gray' # 设置 颜色 style
 
 
 <div id="subplot"></div>  
-plt.subplot(*args,**args):
+plt.subplot(*args,**args):<br>
 ```
 plt.subplot(*args,**args):
 ```  
 
 返回给定网格位置的子图<br>
 例子:<br> 
-```
+```python
 for i in range(25):  
           plt.subplot(5,5,i+1)
 ``` 
