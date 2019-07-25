@@ -1,5 +1,6 @@
 # [plt.rcParams](#rcParams)  
 # [plt.subplot](#subplot)
+# [plt.xticks()](#xticks)
 <div id="rcParams"></div> 
 
 ## plt.rcParams 
@@ -27,3 +28,23 @@ for i in range(25):
 ``` 
 
 表示一共5行5列，分别在第0个位置到第24个位置画坐标轴
+
+<div id="xticks"></div><br/>
+## plt.xticks()<br/>
+获取或设置当前刻度线位置和x轴标签<br/>
+参数：<br/>
+locs:array_like<br/>
+应该放置刻度的位置列表。通过空列表禁用xticks<br/>
+labels:array_like,optional<br/>
+要放置在给定locs的标签列表<br/>
+返回:<br/>
+locs:一系列标签列表<br/>
+labels:一个'.Text'对象列表<br/>
+例子：<br/>
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+plt.rcParams['font.sans-serif']=['SimHei'] #设置中文显示
+plt.xticks(np.arange(5),('Tom','Dick','Harry','Sally','Sue'))
+plt.yticks(np.arange(5),('汽车','飞机','大炮','轮船','高铁'))
+```<br/>
