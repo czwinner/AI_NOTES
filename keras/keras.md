@@ -1,4 +1,4 @@
-[keras.layers.Dense](#dense)
+# [keras.layers.Dense](#keras.layers.Dense)
 # keras Sequential模型
 
 
@@ -22,7 +22,7 @@ model.add(Dense(32, input_dim=784))
 model.add(Activation('relu'))
 ```
 
-<div id="dense"></div>
+<div id="keras.layers.Dense"></div>
 
 ## keras.layers.Dense
 ```python
