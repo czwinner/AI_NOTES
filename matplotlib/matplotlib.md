@@ -29,7 +29,8 @@ for i in range(25):
 
 表示一共5行5列，分别在第0个位置到第24个位置画坐标轴
 
-<div id="xticks"></div><br/>
+<div id="xticks"></div>
+
 ## plt.xticks()<br/>
 获取或设置当前刻度线位置和x轴标签<br/>
 参数：<br/>
@@ -47,4 +48,4 @@ import numpy as np
 plt.rcParams['font.sans-serif']=['SimHei'] #设置中文显示
 plt.xticks(np.arange(5),('Tom','Dick','Harry','Sally','Sue'))
 plt.yticks(np.arange(5),('汽车','飞机','大炮','轮船','高铁'))
-```<br/>
+```
