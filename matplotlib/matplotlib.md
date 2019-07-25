@@ -58,7 +58,7 @@ for i in range(25):
 ``` 
 
 表示一共5行5列，分别在第0个位置到第24个位置画坐标轴
-<div id="xlabel"></div><br>
+<div id="xlabel"></div></br>
 ## plt.xlabel<br>
 ```python
 plt.xlabel(xlabel,fontdict=None,labelpad=None,**kwargs)
