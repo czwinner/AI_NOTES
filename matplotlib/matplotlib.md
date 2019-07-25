@@ -1,6 +1,14 @@
+# [plt.grid](#grid)
 # [plt.rcParams](#rcParams)  
 # [plt.subplot](#subplot)
 # [plt.xticks()](#xticks)
+
+<div id="grid"></div> 
+## plt.grid <br>
+plt.grid(True) # 显示背景的网格线<br>
+plt.grid(False) # 关闭背景的网格线<br> 
+ax.grid(color=’r’, linestyle=’-‘, linewidth=2) # 设置背景网格线的样式<br>
+
 <div id="rcParams"></div> 
 
 ## plt.rcParams 
