@@ -49,4 +49,4 @@ plt.rcParams['font.sans-serif']=['SimHei'] #设置中文显示
 plt.xticks(np.arange(5),('Tom','Dick','Harry','Sally','Sue'))
 plt.yticks(np.arange(5),('汽车','飞机','大炮','轮船','高铁'))
 ```
-![](https://github.com/czwinner/AI_NOTES/blob/master/matplotlib/pictures/plt.xticks.png)
+![](https://github.com/czwinner/AI_NOTES/blob/master/matplotlib/pictures/plt.xticks.png){:height="50%" width="50%"}
