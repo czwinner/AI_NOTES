@@ -65,7 +65,7 @@ for i in range(25):
 plt.xlabel(xlabel,fontdict=None,labelpad=None,**kwargs)
 ```
 设置x轴的标签<br>
-参数：<br>
+**参数:**<br>
 xlabel:str<br>
 标签文字<br>
 
