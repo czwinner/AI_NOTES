@@ -1,5 +1,5 @@
-#[plt.rcParams](#rcParams)  
-#[plt.subplot](#subplot)
+# [plt.rcParams](#rcParams)  
+# [plt.subplot](#subplot)
 <div id="rcParams"></div>
 
 ```python
@@ -11,7 +11,7 @@ plt.rcParams['image.cmap'] = 'gray' # 设置 颜色 style
 
 <div id="subplot"></div> 
 
-##plt.subplot(*args,**args):
+## plt.subplot(*args,**args):
 
 ```
 plt.subplot(*args,**args):
