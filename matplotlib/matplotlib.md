@@ -27,7 +27,7 @@ plt.imshow(image,cmap=plt.cm.jet)
 **返回**:
 一个AxesImage对象<br>
 ```diff
--注意: plt.imshow()函数负责对图像进行处理，但是不能显示，其后跟着plt.show()才能显示出来<br>
+- 注意: plt.imshow()函数负责对图像进行处理，但是不能显示，其后跟着plt.show()才能显示出来
 ```
 <div id="rcParams"></div> 
 
