@@ -2,6 +2,7 @@
 # [plt.imshow](#imshow)
 # [plt.rcParams](#rcParams)  
 # [plt.subplot](#subplot)
+# [plt.xlabel](#xlabel)
 # [plt.xticks()](#xticks)
 
 <div id="grid"></div> 
@@ -57,6 +58,15 @@ for i in range(25):
 ``` 
 
 表示一共5行5列，分别在第0个位置到第24个位置画坐标轴
+<div id="xlabel"></div>
+## plt.xlabel
+```python
+plt.xlabel(xlabel,fontdict=None,labelpad=None,**kwargs)
+```
+设置x轴的标签<br>
+参数：<br>
+xlabel:str<br>
+标签文字<br>
 
 <div id="xticks"></div>
 
