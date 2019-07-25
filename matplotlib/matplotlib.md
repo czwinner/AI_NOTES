@@ -1,4 +1,5 @@
 # [plt.grid](#grid)
+# [plt.imshow](#imshow)
 # [plt.rcParams](#rcParams)  
 # [plt.subplot](#subplot)
 # [plt.xticks()](#xticks)
@@ -9,6 +10,23 @@
 plt.grid(True) # 显示背景的网格线<br>
 plt.grid(False) # 关闭背景的网格线<br> 
 ax.grid(color=’r’, linestyle=’-‘, linewidth=2) # 设置背景网格线的样式<br>
+
+<div id="imshow"></div>
+
+## plt.imshow
+
+plt.imshow(X,cmap=None)<br>
+参数:<br>
+X:要绘制的图像或数组<br>
+camp:颜色图谱(colormap),默认绘制为RGB颜色空间<br>
+用的比较多的有gray,jet等，如<br>
+```python
+plt.imshow(image,plt.cm.gray)
+plt.imshow(image,cmap=plt.cm.jet)
+```
+**返回**:
+一个AxesImage对象<br>
+注意：plt.imshow()函数负责对图像进行处理，但是不能显示，其后跟着plt.show()才能显示出来<br>
 
 <div id="rcParams"></div> 
 
