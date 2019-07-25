@@ -1,26 +1,8 @@
 # [keras.layers.Dense](#keras.layers.Dense)
-# keras Sequential模型
+# [keras Sequential模型](#keras Sequential)
 
 
-Sequential模型是层的线性堆栈
-可以通过将层实例列表传递给构造函数来创建Sequential模型
-```python
-from keras.models import Sequential
-from keras.layers import Dense, Activation
 
-model = Sequential([
-    Dense(32, input_shape=(784,)),
-    Activation('relu'),
-    Dense(10),
-    Activation('softmax'),
-])
-```
-也可以通过.add()方法简单地添加图层
-```python
-model = Sequential()
-model.add(Dense(32, input_dim=784))
-model.add(Activation('relu'))
-```
 
 <div id="keras.layers.Dense"></div>
 
@@ -52,3 +34,25 @@ model.add(Dense(32))
 * activity_regularizer: 运用到层的输出的正则化函数<br>
 * kernel_constraint: 运用到 kernel 权值矩阵的约束函数<br>
 * bias_constraint: 运用到偏置向量的约束函数<br>
+
+<div id="keras Sequential"></div>
+## keras Sequential模型
+Sequential模型是层的线性堆栈
+可以通过将层实例列表传递给构造函数来创建Sequential模型
+```python
+from keras.models import Sequential
+from keras.layers import Dense, Activation
+
+model = Sequential([
+    Dense(32, input_shape=(784,)),
+    Activation('relu'),
+    Dense(10),
+    Activation('softmax'),
+])
+```
+也可以通过.add()方法简单地添加图层
+```python
+model = Sequential()
+model.add(Dense(32, input_dim=784))
+model.add(Activation('relu'))
+```
