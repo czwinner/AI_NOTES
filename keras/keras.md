@@ -1,5 +1,6 @@
 # keras Sequential模型
-[# keras.layers.Dense](#dense)
+[#keras.layers.Dense](#dense)
+
 Sequential模型是层的线性堆栈
 可以通过将层实例列表传递给构造函数来创建Sequential模型
 ```python
@@ -41,7 +42,7 @@ model.add(Dense(32))
 ```
 参数:<br>
 *units:正整数，输出空间维度。<br>
-*activation: 激活函数 (详见 activations)。 若不指定，则不使用激活函数 (即，「线性」激活: a(x) = x)。<br>
+*activation: 激活函数 (详见 activations)。 若不指定，则不使用激活函数 <br>
 *use_bias: 布尔值，该层是否使用偏置向量。<br>
 *kernel_initializer: kernel 权值矩阵的初始化器<br>
 *bias_initializer: 偏置向量的初始化器<br>
