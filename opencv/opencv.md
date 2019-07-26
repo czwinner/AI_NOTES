@@ -1,4 +1,4 @@
-# [cv.VideoCapture()] (#videocapture)
+# [cv.VideoCapture](#videocapture)
 
 <div id="videocapture"></div>
 
