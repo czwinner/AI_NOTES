@@ -20,8 +20,8 @@
 ## cv.imwrite(filename,img)
 将图像保存到指定的文件中。函数imwrite将图像保存到指定的文件中。<br>
 参数：<br>
-filename:要保存的文件名<br>
-img:要保存的图像<br>
+* filename:要保存的文件名<br>
+* img:要保存的图像<br>
 
 <div id="resize"></div>
 
