@@ -41,8 +41,8 @@ model.add(Dense(32))
 ## keras.layers.Flatten
 展平输入。不影响batch_size<br>
 参数:<br>
-* data_format:字符串。channels_last或channels_first。输入中维度的顺序。channels_last表示(batch,...,channels)。channels_first表示(batch,channels,...)。默认为"channels_last"<br>
-例子：<br>
+* data_format:字符串。channels_last或channels_first。输入中维度的顺序。channels_last表示(batch,...,channels)。channels_first表示(batch,channels,...)。默认为"channels_last"
+例子:<br>
 ```python
 model=Sequential()
 model.add(Convolution2D(64,3,3,
