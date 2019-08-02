@@ -1,6 +1,7 @@
 # [keras.layers.Dense](#keras.layers.Dense)
 # [keras.layers.Flatten](#keras.layers.Flatten)
 # [keras Sequential模型](#keras_Sequential)
+# [model.compile方法](#keras.compile)
 
 
 
@@ -74,3 +75,13 @@ model = Sequential()
 model.add(Dense(32, input_dim=784))
 model.add(Activation('relu'))
 ```
+
+<div id="keras.compile"></div>
+
+## model.compile
+compile(optimizer,loss=None,metrics=None)<br>
+用于配置训练模型<br>
+**参数**：<br>
+* optimizer:字符串（优化器名)或者优化器实例<br>
+* loss:字符串（目标函数名）或目标函数，如果模型具有多个输出，则可以通过损失函数的字典或列表，在每个输出上使用不同的损失。模型将最小化的损失值讲师所有单个损失的总和。<br>
+* metrics:在训练和测试期间的模型评估标准。通常会使用metrics=['accuracy'],要为多输出模型的不同输出指定不同的评估标准，还可以传递一个字典，如metrics={'output_a':'accuracy'}<br>
