@@ -3,6 +3,7 @@
 
 ## class TFRecordWriter
 将记录写入TFRecords文件的类<br>
+方法__init__<br>
 ```python
 __init__(
   path,
