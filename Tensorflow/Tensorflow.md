@@ -3,7 +3,7 @@
 
 ## class TFRecordWriter
 将记录写入TFRecords文件的类<br>
-方法__init__<br>
+**方法__init__**<br>
 ```python
 __init__(
   path,
@@ -15,7 +15,7 @@ __init__(
 * path:TFRecords文件的路径<br>
 * options:(可选）指定压缩类型<br>
 
-方法 write<br>
+**方法 write**<br>
 write(record)<br>
 将字符串记录写入文件<br>
 参数：<br>
