@@ -2,6 +2,7 @@
 ## [os.path.sep.join](#os.path.sep.join)
 ## [encode](#encode)
 ## [python open](#python_open)
+## [python File write](#python_File_write)
 
 <div id="os.path.isfile"></div>
 
@@ -79,3 +80,26 @@ RUNOOB2
 >>>f.read()
 'RUNOOB1\nRUNOOB2\n'
 ```
+
+<div id="python_File_write"></div>
+
+## Python File write()方法
+### 概述
+write()方法用于向文件红写入指定字符串。<br>
+在文件关闭前或缓冲区刷新前，字符串内容存储在缓冲区宗，这时在文件中看不到写入的内容。<br>
+如果文件打开模式带b,那写入内容时，str(参数)要用encode方法转为bytes形式<br>
+### 语法
+fileObject.write(str)
+### 参数
+* str:要写入文件的字符串
+### 返回值
+写入的字符长度
+### 例子：
+```python
+f=open("test.txt",'w')
+f.write('Hello Python\nHello Java!')
+f.close()
+```
+打开test.txt<br>
+Hello Python<br>
+Hello Java!<br>
