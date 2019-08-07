@@ -12,5 +12,6 @@ os.path.sep.join<br>
 ```python
 ANNOT_PATH = os.path.sep.join(["lisa","allAnnotations.csv"])
 ```
+
 返回连接的字符串<br>
 ANNOT_PATH='lisa/allAnnotations.csv'<br>
