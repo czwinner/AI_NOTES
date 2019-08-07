@@ -71,7 +71,7 @@ open(file, mode='r', buffering=-1, encoding=None, errors=None, newline=None, clo
 * w:打开一个文件只用于写入。如果该文件已经存在则打开文件，并从靠头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。
 ### 实例
 测试文件test.txt,内容如下:
-RUNOOB1
+RUNOOB1<br>
 RUNOOB2
 ```python
 >>>f=open('test.txt')
