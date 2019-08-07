@@ -8,10 +8,10 @@ path:类路径。类路径对象可以是一个表示路径的 str 或者 bytes 
 如果path是现有常规文件，则返回True
 
 <div id="os.path.sep.join"></div>
-os.path.sep.join<br>
+os.path.sep.join
+
 ```python
 ANNOT_PATH = os.path.sep.join(["lisa","allAnnotations.csv"])
 ```
-
 返回连接的字符串<br>
 ANNOT_PATH='lisa/allAnnotations.csv'<br>
