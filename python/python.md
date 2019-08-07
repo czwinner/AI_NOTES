@@ -2,6 +2,7 @@
 ## [os.path.sep.join](#os.path.sep.join)
 ## [encode](#encode)
 ## [open](#open)
+
 <div id="os.path.isfile"></div>
 
 ## os.path.isfile(path)  
