@@ -1,7 +1,7 @@
 ## [os.path.isfile(path)](#os.path.isfile)
 ## [os.path.sep.join](#os.path.sep.join)
 ## [encode](#encode)
-## [open](#open)
+## [python open](#python open)
 
 <div id="os.path.isfile"></div>
 
@@ -54,7 +54,7 @@ UTF-8解码：菜鸟教程
 GBK解码：菜鸟教程
 ```
 
-<div id="open"></div>
+<div id="python open"></div>
 
 ## Python open()函数
 ### 描述
