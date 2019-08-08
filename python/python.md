@@ -5,6 +5,7 @@
 ## [python File write](#python_File_write)
 ## [python read()](#python_read)
 ## [python strip()](#python_strip)
+## [python split()](#python_split)
 <div id="os.path.isfile"></div>
 
 ## os.path.isfile(path)  
@@ -140,4 +141,23 @@ str="**czwinner**"
 str.strip('*')
 输出如下:
 'czwinner'
+```
+
+<div id="python_split"></div>
+
+## Python split()方法
+### 描述
+split()通过指定分隔符对字符串进行切片，如果第二个参数maxsplit有指定值，则分割为maxsplit+1个子字符串
+### 语法
+str.split(sep=None, maxsplit=-1)
+### 参数
+* sep:分隔符，默认为所有的空字符串，包括空格、换行(\n)、制表符(\t)等
+* maxsplit:分割次数。默认为-1,即分隔所有
+### 返回值
+分割后的字符串列表
+### 例子
+```python
+b="this is a very pretty girl!"
+b.split() #返回['this','is','a','very','pretty','girl!']
+b.split(maxsplit=1) # 返回['this','is a very pretty girl!']
 ```
