@@ -3,6 +3,7 @@
 ## [encode](#encode)
 ## [python open](#python_open)
 ## [python File write](#python_File_write)
+## [python read](#python_read)
 
 <div id="os.path.isfile"></div>
 
@@ -103,3 +104,19 @@ f.close()
 打开test.txt<br>
 Hello Python<br>
 Hello Java!<br>
+
+<div id="python_read"</div>
+
+## Python read()
+read()每次读取整个文件，通常用语将文件内容放到一个字符串变量中。<br>
+### 例子
+test.txt文件内容如下:<br>
+这是第一行<br>
+这是第二行<br>
+这是第三行<br>
+```python
+f=open(file="test.txt")
+line=f.read()
+type(line) #输出str
+line #输出'这是第一行\n这是第二行\n这是第三行\n'
+```
