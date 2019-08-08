@@ -149,7 +149,9 @@ str.strip('*')
 ### 描述
 split()通过指定分隔符对字符串进行切片，如果第二个参数maxsplit有指定值，则分割为maxsplit+1个子字符串
 ### 语法
+```python
 str.split(sep=None, maxsplit=-1)
+```
 ### 参数
 * sep:分隔符，默认为所有的空字符串，包括空格、换行(\n)、制表符(\t)等
 * maxsplit:分割次数。默认为-1,即分隔所有
