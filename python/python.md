@@ -6,6 +6,7 @@
 ## [python read()](#python_read)
 ## [python strip()](#python_strip)
 ## [python split()](#python_split)
+## [python get()](#python_get)
 <div id="os.path.isfile"></div>
 
 ## os.path.isfile(path)  
@@ -162,4 +163,26 @@ str.split(sep=None, maxsplit=-1)
 b="this is a very pretty girl!"
 b.split() #返回['this','is','a','very','pretty','girl!']
 b.split(maxsplit=1) # 返回['this','is a very pretty girl!']
+```
+
+<div id="python_get"></div>
+
+## Python字典get()方法
+### 描述
+Python字典get()函数返回指定键的值，如果只不在字典中返回默认值
+### 语法
+dict.get(key,default=None)
+### 参数
+* key:字典中要查找的键
+* default:如果指定键的值不存在时，返回该默认值
+### 返回值
+返回指定键的值，如果值不在字典中返回默认值None
+### 例子
+```python
+dict={'Name':'Ruboob','Age':27}
+print("Age值为: %s" % dict.get('Age'))
+print("Sex值为: %s" % dict.get('Sex','NA'))
+以上实例输出结果为:
+Age值为:27
+Sex值为:NA
 ```
