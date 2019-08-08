@@ -122,6 +122,7 @@ line #输出'这是第一行\n这是第二行\n这是第三行\n'
 ```
 
 <div id="python_strip"></div>
+
 ## Python strip()
 ### 描述
 Python strip()方法用于移除字符串头尾指定的字符（默认为空格）或字符序列。<br>
