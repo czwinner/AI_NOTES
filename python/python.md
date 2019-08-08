@@ -3,8 +3,8 @@
 ## [encode](#encode)
 ## [python open](#python_open)
 ## [python File write](#python_File_write)
-## [python read](#python_read)
-
+## [python read()](#python_read)
+## [python strip()](#python_strip)
 <div id="os.path.isfile"></div>
 
 ## os.path.isfile(path)  
@@ -119,4 +119,24 @@ f=open(file="test.txt")
 line=f.read()
 type(line) #输出str
 line #输出'这是第一行\n这是第二行\n这是第三行\n'
+```
+
+<div id="python_strip"></div>
+## Python strip()
+### 描述
+Python strip()方法用于移除字符串头尾指定的字符（默认为空格）或字符序列。<br>
+### 注意
+该方法只能删除开头或是结尾的字符，不能删除中间部分的字符。<br>
+### 语法
+str.strip(chars)
+### 参数
+* chars:移除字符串头尾指定的字符序列
+### 返回值
+返回移除字符串头尾指定的字符序列生成的新字符串
+### 例子
+```python
+str="**czwinner**"
+str.strip('*')
+输出如下:
+'czwinner'
 ```
