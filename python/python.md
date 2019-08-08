@@ -108,7 +108,7 @@ Hello Java!<br>
 <div id="python_read"</div>
 
 ## Python read()
-read()每次读取整个文件，通常用语将文件内容放到一个字符串变量中。<br>
+read()每次读取整个文件，通常用于将文件内容放到一个字符串变量中。<br>
 ### 例子
 test.txt文件内容如下:<br>
 这是第一行<br>
