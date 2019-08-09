@@ -1,7 +1,7 @@
-# [TFRecordWriter](#TFRecordWriter)
+# [TFRecordWriter](#TFRecord_Writer)
 # [int64_feature,bytes_feature,float_list_feature,bytes_list_feature,int64_list_feature](#int64_feature)
 # [TFRecord](#TFRecord)
-<div id="TFRecordWriter"></div>
+<div id="TFRecord_Writer"></div>
 
 ## class TFRecordWriter
 将记录写入TFRecords文件的类<br>
