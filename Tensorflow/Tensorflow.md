@@ -187,8 +187,8 @@ Out [6]: feature {
 	    			   }
 	  	      }
 		}
-In [7]: example=tf.train.Example(features=feature)
-In [8]: example
+In [7]:  example=tf.train.Example(features=feature)
+In [8]:  example
 Out [8]: features {
 		  feature {
 		    	  key: "Age"
@@ -241,7 +241,7 @@ Out [8]: features {
 		    	      }
 		  	  }
 		     }
-In [9]: writer=tf.python_io.TFRecordWriter('test.tfrecord')
+In [9]:  writer=tf.python_io.TFRecordWriter('test.tfrecord')
 In [10]: writer.write(example.SerializeToString())
 In [11]: writer.close()
 ```
