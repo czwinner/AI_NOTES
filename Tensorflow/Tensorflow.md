@@ -1,6 +1,6 @@
 # [TFRecordWriter](#TFRecord_Writer)
 # [int64_feature,bytes_feature,float_list_feature,bytes_list_feature,int64_list_feature](#int64_feature)
-# [TFRecord](#TFRecord)
+# [TFRecord](#TF_Record)
 <div id="TFRecord_Writer"></div>
 
 ## class TFRecordWriter
@@ -62,7 +62,7 @@ Out[24]:int64_list{
 		  }
 ```
 
-<div id="TFRecord"</div>
+<div id="TF_Record"</div>
 
 ## TFRecord
 TFRecord文件格式是Tensorflow自己的二进制存储格式。<br>
@@ -123,124 +123,123 @@ Out[3]:{'Age':29,
 	'Suggestion Purchased':1.0,
 	'Purchase Price':9.99}
 In [4]: Age_feature=tf.train.Feature(int64_list=tf.train.Int64List(value=[data['Age']]))
-Movie_feature=tf.train.Feature(bytes_list=tf.train.BytesList(value=[i.encode('utf-8') for i in data['Movie']]))                              
-Movie_Rating_feature=tf.train.Feature(float_list=tf.train.FloatList(value=data['Movie Ratings']))
-Suggestion_feature=tf.train.Feature(bytes_list=tf.train.BytesList(value=[data['Suggestion'].encode('utf-8')]))
-Suggestion_Purchased_feature=tf.train.Feature(float_list=tf.train.FloatList(value=[data['Suggestion Purchased']]))
-Purchase_Price=tf.train.Feature(float_list=tf.train.FloatList(value=[data['Purchase Price']]))
+        Movie_feature=tf.train.Feature(bytes_list=tf.train.BytesList(value=[i.encode('utf-8') for i in data['Movie']]))                         Movie_Rating_feature=tf.train.Feature(float_list=tf.train.FloatList(value=data['Movie Ratings']))
+        Suggestion_feature=tf.train.Feature(bytes_list=tf.train.BytesList(value=[data['Suggestion'].encode('utf-8')]))
+        Suggestion_Purchased_feature=tf.train.Feature(float_list=tf.train.FloatList(value=[data['Suggestion Purchased']]))
+        Purchase_Price=tf.train.Feature(float_list=tf.train.FloatList(value=[data['Purchase Price']]))
 In [5]: feature=tf.train.Features(feature={
-    'Age':Age_feature,
-    'Movie':Movie_feature,
-    'Movie Rating':Movie_Rating_feature,
-    'Suggestion':Suggestion_feature,
-    'Suggestion Purchased':Suggestion_Purchased_feature,
-    'Purchase Price':Purchase_Price
-})
+                                          'Age':Age_feature,
+    					  'Movie':Movie_feature,
+    					  'Movie Rating':Movie_Rating_feature,
+    					  'Suggestion':Suggestion_feature,
+    					  'Suggestion Purchased':Suggestion_Purchased_feature,
+    					  'Purchase Price':Purchase_Price
+					  })
 In [6]: feature
 Out [6]: feature {
-  key: "Age"
-  value {
-    int64_list {
-      value: 29
-    }
-  }
-}
-feature {
-  key: "Movie"
-  value {
-    bytes_list {
-      value: "The Shawshank Redemption"
-      value: "Fight club"
-    }
-  }
-}
-feature {
-  key: "Movie Rating"
-  value {
-    float_list {
-      value: 9.0
-      value: 9.699999809265137
-    }
-  }
-}
-feature {
-  key: "Purchase Price"
-  value {
-    float_list {
-      value: 9.989999771118164
-    }
-  }
-}
-feature {
-  key: "Suggestion"
-  value {
-    bytes_list {
-      value: "Inception"
-    }
-  }
-}
-feature {
-  key: "Suggestion Purchased"
-  value {
-    float_list {
-      value: 1.0
-    }
-  }
-}
+  		  key: "Age"
+  		  value {
+    			 int64_list {
+      			 		value: 29
+    				    }
+  			}
+		 }
+	 feature {
+  		  key: "Movie"
+ 		  value {
+    			bytes_list {
+      					value: "The Shawshank Redemption"
+      					value: "Fight club"
+    				   }
+  			}
+		}
+	feature {
+	  	 key: "Movie Rating"
+	  	 value {
+	    		float_list {
+		      			value: 9.0
+	      				value: 9.699999809265137
+	    			   }
+	  		}
+		}
+	feature {
+	  	key: "Purchase Price"
+	  	value {
+	    		float_list {
+	      				value: 9.989999771118164
+	    			   }
+	  	      }
+		}
+	feature {
+	  	key: "Suggestion"
+	  	value {
+	    		bytes_list {
+	      				value: "Inception"
+	    			   }
+	  	      }
+		}
+	feature {
+	  	key: "Suggestion Purchased"
+	  	value {
+	    		float_list {
+	      				value: 1.0
+	    			   }
+	  	      }
+		}
 In [7]: example=tf.train.Example(features=feature)
 In [8]: example
 Out [8]: features {
-  feature {
-    key: "Age"
-    value {
-      int64_list {
-        value: 29
-      }
-    }
-  }
-  feature {
-    key: "Movie"
-    value {
-      bytes_list {
-        value: "The Shawshank Redemption"
-        value: "Fight club"
-      }
-    }
-  }
-  feature {
-    key: "Movie Rating"
-    value {
-      float_list {
-        value: 9.0
-        value: 9.699999809265137
-      }
-    }
-  }
-  feature {
-    key: "Purchase Price"
-    value {
-      float_list {
-        value: 9.989999771118164
-      }
-    }
-  }
-  feature {
-    key: "Suggestion"
-    value {
-      bytes_list {
-        value: "Inception"
-      }
-    }
-  }
-  feature {
-    key: "Suggestion Purchased"
-    value {
-      float_list {
-        value: 1.0
-      }
-    }
-  }
-}
+		  feature {
+		    	  key: "Age"
+		    	  value {
+		      		 int64_list {
+					     value: 29
+		      			    }
+		    		}
+		  	  }
+		  feature {
+		    	  key: "Movie"
+		    	  value {
+		      		bytes_list {
+					    value: "The Shawshank Redemption"
+					    value: "Fight club"
+		      			   }
+		    		}
+		  	  }
+		  feature {
+		    	  key: "Movie Rating"
+		    	  value {
+		      		float_list {
+					    value: 9.0
+					    value: 9.699999809265137
+		      			   }
+		    	      }
+		  	  }
+		  feature {
+		    	key: "Purchase Price"
+		        value {
+		      		float_list {
+					    value: 9.989999771118164
+		      			   }
+		    		}
+		  	  }
+		  feature {
+		    	key: "Suggestion"
+		    	value {
+		      		bytes_list {
+					    value: "Inception"
+		      	                   }
+		    	      }
+		  	  }
+		  feature {
+		    	key: "Suggestion Purchased"
+		    	value {
+		      		float_list {
+					    value: 1.0
+		      	      		   }
+		    	      }
+		  	  }
+		     }
 In [9]: writer=tf.python_io.TFRecordWriter('test.tfrecord')
 In [10]: writer.write(example.SerializeToString())
 In [11]: writer.close()
