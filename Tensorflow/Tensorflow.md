@@ -99,3 +99,151 @@ tf.train.Example是构造TFRecord的主要组件之一。它的单个参数是fe
 ```python
 example=tf.train.Example(features=movies)
 ```
+tf.python_io.TFRecordWriter实际上是一个Python类。它的参数path接受文件路径，并创建一个与任何其他文件对象一样工作的writer对象。TFRecordWriter类提供write,flush和close方法。方法write接受一个字符串作为参数并将其写入磁盘，这意味着必须首先序列化结构化数据。为此,tf.train.Example和tf.train.SequenceExample提供了SerializeToString方法。<br>
+```python
+with tf.python_io.TFRecordWriter('movie_rating.tfrecord') as writer:
+	writer.write(example.SerialzeToString())
+```
+这是一个完整的示例，它将features写入TFRecord文件<br>
+```python
+In [1]:import tensorflow as tf
+In [2]:data={
+		'Age':29,
+		'Movie':['The Shawshank Redemption','Fight club'],
+		'Movie Ratings':[9.0,9.7],
+		'Suggestion':'Inception',
+		'Suggestion Purchased':1.0,
+		'Purchase Price':9.99
+		}
+In [3]:data
+Out[3]:{'Age':29,
+	'Movie':['The Shawshank Redemption','Fight club'],
+	'Movie Ratings':[9.0,9.7],
+	'Suggestion':'Inception',
+	'Suggestion Purchased':1.0,
+	'Purchase Price':9.99}
+In [4]: Age_feature=tf.train.Feature(int64_list=tf.train.Int64List(value=[data['Age']]))
+Movie_feature=tf.train.Feature(bytes_list=tf.train.BytesList(value=[i.encode('utf-8') for i in data['Movie']]))                              
+Movie_Rating_feature=tf.train.Feature(float_list=tf.train.FloatList(value=data['Movie Ratings']))
+Suggestion_feature=tf.train.Feature(bytes_list=tf.train.BytesList(value=[data['Suggestion'].encode('utf-8')]))
+Suggestion_Purchased_feature=tf.train.Feature(float_list=
+                                              tf.train.FloatList(value=[data['Suggestion Purchased']]))
+Purchase_Price=tf.train.Feature(float_list=
+                               tf.train.FloatList(value=[data['Purchase Price']]))
+In [5]: feature=tf.train.Features(feature={
+    'Age':Age_feature,
+    'Movie':Movie_feature,
+    'Movie Rating':Movie_Rating_feature,
+    'Suggestion':Suggestion_feature,
+    'Suggestion Purchased':Suggestion_Purchased_feature,
+    'Purchase Price':Purchase_Price
+})
+In [6]: feature
+Out [6]: feature {
+  key: "Age"
+  value {
+    int64_list {
+      value: 29
+    }
+  }
+}
+feature {
+  key: "Movie"
+  value {
+    bytes_list {
+      value: "The Shawshank Redemption"
+      value: "Fight club"
+    }
+  }
+}
+feature {
+  key: "Movie Rating"
+  value {
+    float_list {
+      value: 9.0
+      value: 9.699999809265137
+    }
+  }
+}
+feature {
+  key: "Purchase Price"
+  value {
+    float_list {
+      value: 9.989999771118164
+    }
+  }
+}
+feature {
+  key: "Suggestion"
+  value {
+    bytes_list {
+      value: "Inception"
+    }
+  }
+}
+feature {
+  key: "Suggestion Purchased"
+  value {
+    float_list {
+      value: 1.0
+    }
+  }
+}
+In [7]: example=tf.train.Example(features=feature)
+In [8]: example
+Out [8]: features {
+  feature {
+    key: "Age"
+    value {
+      int64_list {
+        value: 29
+      }
+    }
+  }
+  feature {
+    key: "Movie"
+    value {
+      bytes_list {
+        value: "The Shawshank Redemption"
+        value: "Fight club"
+      }
+    }
+  }
+  feature {
+    key: "Movie Rating"
+    value {
+      float_list {
+        value: 9.0
+        value: 9.699999809265137
+      }
+    }
+  }
+  feature {
+    key: "Purchase Price"
+    value {
+      float_list {
+        value: 9.989999771118164
+      }
+    }
+  }
+  feature {
+    key: "Suggestion"
+    value {
+      bytes_list {
+        value: "Inception"
+      }
+    }
+  }
+  feature {
+    key: "Suggestion Purchased"
+    value {
+      float_list {
+        value: 1.0
+      }
+    }
+  }
+}
+In [9]: writer=tf.python_io.TFRecordWriter('test.tfrecord')
+In [10]: writer.write(example.SerializeToString())
+In [11]: writer.close()
+```
