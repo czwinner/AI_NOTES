@@ -75,3 +75,27 @@ tf.train.Example不是普通的Python类，而是protocol buffer。protocol buff
 让我们使用Tensorflow文档中的电影推荐应用程序作为示例<br>
 ![](https://miro.medium.com/max/1400/1*At3Y8UvzwAK1bfl5EjRQiA.jpeg)
 
+我们有许多feature,每个feature都是一个列表，其中每个条目都具有相同的数据类型。为了将这些feature都存储在TFRecord中，我们需要创建构成feature的列表。<br>
+tf.train.BytesList,tf.train.FloatList和tf.train.Int64List是tf.train.Feature的核心。这三个都有一个参数值，需要相应字节、float和int的列表。<br>
+```python
+movie_name_list=tf.train.BytesList(value=[b'The Shawshank Redemption',b'Fight Club'])
+movie_rating_list=tf.train.FloatList(value=[9.0,9.7])
+```
+Python字符串需要转换为字节(例如my_string.encode('utf-8')),然后能存储在tf.train.BytesList中。<br>
+tf.train.Feature包装特定类型的数据列表，以便Tensorflow可以理解它。它有一个参数，可以是bytes_list/float_list/int64_list之一。存储列表可以是tf.train.BytesList(参数名称bytes_list),tf.train.FloatList(参数名称float_list)或tf.train.Int64List(参数名称int64_list)类型。<br>
+```python
+movie_names=tf.train.Feature(bytes_list=movie_name_list)
+movie_ratings=tf.train.Feature(float_list=movie_rating_list)
+```
+tf.train.Features是feature的集合，它有一个参数feature，feature需要一个字典，键是feature的名称，值是tf.train.Feature。<br>
+```python
+movie_dict={
+	'Movie Names':movie_names,
+	'Movie Ratings':movie_ratings
+	}
+movies=tf.train.Features(feature=movie_dict)
+```
+tf.train.Example是构造TFRecord的主要组件之一。它的单个参数是features,即tf.train.Features。<br>
+```python
+example=tf.train.Example(features=movies)
+```
