@@ -126,10 +126,8 @@ In [4]: Age_feature=tf.train.Feature(int64_list=tf.train.Int64List(value=[data['
 Movie_feature=tf.train.Feature(bytes_list=tf.train.BytesList(value=[i.encode('utf-8') for i in data['Movie']]))                              
 Movie_Rating_feature=tf.train.Feature(float_list=tf.train.FloatList(value=data['Movie Ratings']))
 Suggestion_feature=tf.train.Feature(bytes_list=tf.train.BytesList(value=[data['Suggestion'].encode('utf-8')]))
-Suggestion_Purchased_feature=tf.train.Feature(float_list=
-                                              tf.train.FloatList(value=[data['Suggestion Purchased']]))
-Purchase_Price=tf.train.Feature(float_list=
-                               tf.train.FloatList(value=[data['Purchase Price']]))
+Suggestion_Purchased_feature=tf.train.Feature(float_list=tf.train.FloatList(value=[data['Suggestion Purchased']]))
+Purchase_Price=tf.train.Feature(float_list=tf.train.FloatList(value=[data['Purchase Price']]))
 In [5]: feature=tf.train.Features(feature={
     'Age':Age_feature,
     'Movie':Movie_feature,
