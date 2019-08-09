@@ -1,5 +1,6 @@
 # [TFRecordWriter](#TFRecordWriter)
 # [int64_feature,bytes_feature,float_list_feature,bytes_list_feature,int64_list_feature](#int64_feature)
+# [TFRecord](#TFRecord)
 <div id="TFRecordWriter"></div>
 
 ## class TFRecordWriter
@@ -60,3 +61,17 @@ Out[24]:int64_list{
 			value:32
 		  }
 ```
+
+<div id="TFRecord"></div>
+
+## TFRecord
+TFRecord文件格式是Tensorflow自己的二进制存储格式。<br>
+当处理大型数据集时使用二进制文件格式存储数据会对导入性能产生重大影响，从而影响训练时间。二进制数据在磁盘上占用的空间更少，复制时间更短，可以从磁盘更有效地读取。<br>
+### 构建TFRecords
+TFRecord文件将数据存储为二进制字符串序列。意味着需要在将数据写入文件之前指定数据的结构。Tensorflow为此提供了两个组件:tf.train.Example和tf.train.SequenceExample。必须将每个数据样本存储在其中一个结构中，然后对其进行序列化并使用tf.python_io.TFRecordWriter将其写入磁盘。<br>
+tf.train.Example不是普通的Python类，而是protocol buffer。protocol buffer是Google开发的一种方法，用于有效的方式序列化结构化数据。<br>
+### 使用tf.train.Example的电影推荐
+如果数据集由features组成，其中每个feature都是相同类型的值列表，则tf.train.Example是要使用的正确组件。<br>
+让我们使用Tensorflow文档中的电影推荐应用程序作为示例<br>
+![](https://miro.medium.com/max/1400/1*At3Y8UvzwAK1bfl5EjRQiA.jpeg)
+
