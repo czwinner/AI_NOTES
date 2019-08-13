@@ -26,7 +26,7 @@ low:float or array_like of floats,optional<br>
 high: float or tuple of ints,oprional<br>
       输出间隔的上限<br>
 size: int or tuple of ints,optional<br>
-      输出形状，如果给定形状(m,n,k)则绘制mxnxk个样本。如果为None,则返回单个值。<br>
+      输出形状，如果给定形状(m,n,k)则绘制MxNxK个样本。如果为None,则返回单个值。<br>
 ### 返回
 ndarray or scalar<br>
 ### 例子:
