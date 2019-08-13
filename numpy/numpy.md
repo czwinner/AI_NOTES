@@ -18,17 +18,17 @@ delimiter:str,optional
 <div id="numpy.random.uniform"></div>
 
 ## numpy.random.uniform
-numpy.random.uniform(low=0.0,high=1.0,size=None)
-从均匀分布中抽取样本。在low到high 区间内取样本，包括low,不包括high
+numpy.random.uniform(low=0.0,high=1.0,size=None)<br>
+从均匀分布中抽取样本。在low到high 区间内取样本，包括low,不包括high<br>
 ### 参数
-low:float or array_like of floats,optional
-    输出间隔的下限
-high: float or tuple of ints,oprional
-      输出间隔的上限
-size: int or tuple of ints,optional
-      输出形状，如果给定形状(m,n,k)则绘制m*n*k个样本。如果为None,则返回单个值。
+low:float or array_like of floats,optional<br>
+    输出间隔的下限<br>
+high: float or tuple of ints,oprional<br>
+      输出间隔的上限<br>
+size: int or tuple of ints,optional<br>
+      输出形状，如果给定形状(m,n,k)则绘制m*n*k个样本。如果为None,则返回单个值。<br>
 ### 返回
-ndarray or scalar
+ndarray or scalar<br>
 ### 例子:
 ```python
 import numpy as np
