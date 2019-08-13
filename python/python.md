@@ -7,6 +7,7 @@
 ## [python strip()](#python_strip)
 ## [python split()](#python_split)
 ## [python get()](#python_get)
+## [python argparse](#argparse)
 <div id="os.path.isfile"></div>
 
 ## os.path.isfile(path)  
@@ -186,3 +187,25 @@ print("Sex值为: %s" % dict.get('Sex','NA'))
 Age值为:27
 Sex值为:NA
 ```
+
+<div id="argparse"></div>
+
+## python argparse()
+### 创建一个解析器
+使用argparse的第一步是创建一个ArgumentParser对象:<br>
+```python
+parser=argparse.ArgumentParser(description='Process some integers.')
+```
+AggumentParser对象包含将命令行解析成Python数据类型所需的全部信息。<br>
+### 添加参数
+给一个ArgumentParser添加程序参数信息是通过调用add_argument()方法完成的。通常，这些调用指定ArgumentParser如何获取命令行字符串并将其转换为对象。这些信息在parse_args()调用时被存储和使用。例如:<br>
+```python
+>>> parser.add_argument('integers', metavar='N', type=int, nargs='+',
+...                     help='an integer for the accumulator')
+>>> parser.add_argument('--sum', dest='accumulate', action='store_const',
+...                     const=sum, default=max,
+...                     help='sum the integers (default: find the max)')
+```
+稍后调用parse_args()将返回一个具有integers和accumulate两个属性的对象。integers属性将是一个包含一个或多个整数的列表，而accumulate属性当命令行中指定了--sum参数时将是sum()函数，否则是max()函数。<br>
+
+
