@@ -207,5 +207,24 @@ AggumentParser对象包含将命令行解析成Python数据类型所需的全部
 ...                     help='sum the integers (default: find the max)')
 ```
 稍后调用parse_args()将返回一个具有integers和accumulate两个属性的对象。integers属性将是一个包含一个或多个整数的列表，而accumulate属性当命令行中指定了--sum参数时将是sum()函数，否则是max()函数。<br>
-
-
+### 解析参数
+ArgumentParser通过parse_args()方法解析参数。它将检查命令行，把每个参数转换为适当的类型然后调用相应的操作。在大多数情况下，这意味着一个简单的Namespace对象从命令行参数中解析出的属性构建:<br>
+```python
+>>> parser.parse_args(['--sum', '7', '-1', '42'])
+Namespace(accumulate=<built-in function sum>, integers=[7, -1, 42])
+```
+在脚本中，通常 parse_args() 会被不带参数调用，而 ArgumentParser 将自动从 sys.argv 中确定命令行参数。<br>
+### add_argument()方法
+```python
+ArgumentParser.add_argument(name or flags,action,nargs,const,default,type,choices,required,help,metavar,dest)
+```
+* name or flags:一个命名或者一个选项字符串列表，例如foo或-f,--foo
+* action:当参数在命令行中出现时使用的动作基本类型。
+* nargs:命令行参数应当消耗的数目
+* const:被一些action和nargs选择所需求的常数
+* default:当参数未在命令行中出现时使用的值
+* type:命令行参数应当被转换成的类型
+* required:此命令行选项是否可省略
+* help:一个选项作用的简单描述
+* metavar:在使用方法消息中使用的参数值示例
+* dest:被添加到parse_args()所返回对象上的属性名
