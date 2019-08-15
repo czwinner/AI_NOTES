@@ -1,6 +1,7 @@
 # [TFRecordWriter](#TFRecord_Writer)
 # [int64_feature,bytes_feature,float_list_feature,bytes_list_feature,int64_list_feature](#int64_feature)
 # [TFRecord](#TF_Record)
+# [图和会话](#图和会话)
 <div id="TFRecord_Writer"></div>
 
 ## class TFRecordWriter
@@ -245,3 +246,24 @@ In [9]:  writer=tf.python_io.TFRecordWriter('test.tfrecord')
 In [10]: writer.write(example.SerializeToString())
 In [11]: writer.close()
 ```
+
+<div id="图和会话"></div>
+
+## 图和会话
+Tensorflow使用数据流图将计算表示为独立的指令之间的依赖关系。首先定义数据流图，然后创建Tensorflow会话，以便在一组本地和远程设备上运行图的各个部分。<br>
+### 为什么使用数据流图？
+数据流是一种用于并行计算的常用编程模型。在数据流图中，节点表示计算单元，边缘表示计算使用或产生的数据。例如，在Tensorflow图中，tf.matmul操作对应于单个节点，该节点具有两个传入边（要相乘的矩阵)和一个传出边（乘法结果)。<br>
+### 什么事tf.Graph?
+tf.Graph包含两类相关信息:<br>
+* 图结构。图的节点和边缘，表示各个操作组合在一起的方式，但不规定它们的使用方式。图结构不包含源代码传达的上下文信息。<br>
+* 图集合
+### 构建tf.Graph
+Tensorflow程序都以数据流图构建阶段开始。在此阶段，会调用Tensorflow API函数，这些函数可构建新的tf.Operation(节点)和tf.Tensor(边)对象并将它们添加到tf.Graph实例中。Tensorflow提供了一个默认图，此图是同一上下文的所有API函数的明确参数。例如:<br>
+* 调用tf.constant(42.0)可创建单个tf.operation,该操作可以生成值42.0,将该值添加到默认图中，并返回表示常量值的tf.Tensor.
+* 调用tf.matmul(x,y)可创建单个tf.Operation,该操作会将tf.Tensor对象x和y的值相乘，将其添加到默认图中，并返回表示乘法运算结果的tf.Tensor
+* 执行v=tf.Variable(0)可向图添加一个tf.Operation。该操作可以存储一个可写入的张量值，该值在多个tf.Session.run调用之间保持恒定。tf.Variable对象会封装此操作，并可以像张量一样使用，即读取已存储值的当前值。
+* 调用tf.train.Optimizer.minimize可将操作和张量添加到计算梯度的默认图中，并返回一个tf.Operation,该操作在运行时会将这些梯度应用到一组变量中。
+**注意**:调用Tensorflow API中的大多数函数只会将操作和张量添加到默认图中，而不会执行实际计算。编写这些函数，直到拥有表示整个计算的tf.Tensor或tf.Operation,然后将该对象传递给tf.Session以执行计算。<br>
+### 命名空间
+tf.Graph对象会定义一个命名空间（为其包含的tf.Operation对象)。Tensorflow会自动为图中的每个指令选择一个唯一名称，但也可以指定描述性名称。Tensorflow API提供两种方法来覆盖操作名称:<br>
+* 如果API函数会创建新的tf.Operation或返回新的tf.Tensor,则会接受name参数。例如,tf.constant(42.0,name="answer")会创建一个新的tf.Operation(名为"answer")并返回一个tf.Tensor(名为"answer:0")，如果默认图已包含名为"answer"的操作，则Tensorflow会在名称上附加"_1","_2"等字符，以便让名称具有唯一性。
