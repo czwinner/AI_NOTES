@@ -286,4 +286,58 @@ with tf.name_scope("outer"):
 	with tf.name_scope("inner"):
 		c_5 = tf.constant(5, name="c") # => operation named "outer/inner_1/c"
 ```
-	
+### 在会话中执行图:tf.Session
+tf.Session 对象使我们能够访问本地机器中的设备和使用分布式 TensorFlow 运行时的远程设备。它还可缓存关于 tf.Graph 的信息，使您能够多次高效地运行同一计算。
+### tf.Session
+可以为当前默认图创建一个 tf.Session
+```python
+# Create a default in-process session.
+with tf.Session() as sess:
+	###
+```
+由于 tf.Session 拥有物理资源（例如 GPU 和网络连接），因此通常（在 with 代码块中）用作上下文管理器，并在您退出代码块时自动关闭会话。您也可以在不使用 with 代码块的情况下创建会话，但应在完成会话时明确调用 tf.Session.close 以便释放资源。
+### 使用 tf.Session.run 执行操作
+tf.Session.run 方法是运行 tf.Operation 或评估 tf.Tensor 的主要机制。您可以将一个或多个 tf.Operation 或 tf.Tensor 对象传递到 tf.Session.run，TensorFlow 将执行计算结果所需的操作。
+
+tf.Session.run 要求您指定一组 fetch，这些 fetch 可确定返回值，并且可能是 tf.Operation、tf.Tensor 或类张量类型，例如 tf.Variable。这些 fetch 决定了必须执行哪些子图（属于整体 tf.Graph）以生成结果：该子图包含 fetch 列表中指定的所有操作，以及其输出用于计算 fetch 值的所有操作。例如，以下代码段说明了 tf.Session.run 的不同参数如何导致执行不同的子图：
+```python
+x = tf.constant([[37.0, -23.0], [1.0, 4.0]])
+w = tf.Variable(tf.random_uniform([2, 2]))
+y = tf.matmul(x, w)
+output = tf.nn.softmax(y)
+init_op = w.initializer
+
+with tf.Session() as sess:
+  # Run the initializer on `w`.
+  sess.run(init_op)
+
+  # Evaluate `output`. `sess.run(output)` will return a NumPy array containing
+  # the result of the computation.
+  print(sess.run(output))
+
+  # Evaluate `y` and `output`. Note that `y` will only be computed once, and its
+  # result used both to return `y_val` and as an input to the `tf.nn.softmax()`
+  # op. Both `y_val` and `output_val` will be NumPy arrays.
+  y_val, output_val = sess.run([y, output])
+```
+tf.Session.run 也可以选择接受 feed 字典，该字典是从 tf.Tensor 对象（通常是 tf.placeholder 张量）到在执行时会替换这些张量的值（通常是 Python 标量、列表或 NumPy 数组）的映射。例如:<br>
+```python
+# Define a placeholder that expects a vector of three floating-point values,
+# and a computation that depends on it.
+x = tf.placeholder(tf.float32, shape=[3])
+y = tf.square(x)
+
+with tf.Session() as sess:
+  # Feeding a value changes the result that is returned when you evaluate `y`.
+  print(sess.run(y, {x: [1.0, 2.0, 3.0]}))  # => "[1.0, 4.0, 9.0]"
+  print(sess.run(y, {x: [0.0, 0.0, 5.0]}))  # => "[0.0, 0.0, 25.0]"
+
+  # Raises <a href="../api_docs/python/tf/errors/InvalidArgumentError"><code>tf.errors.InvalidArgumentError</code></a>, because you must feed a value for
+  # a `tf.placeholder()` when evaluating a tensor that depends on it.
+  sess.run(y)
+
+  # Raises `ValueError`, because the shape of `37.0` does not match the shape
+  # of placeholder `x`.
+  sess.run(y, {x: 37.0})
+```
+
