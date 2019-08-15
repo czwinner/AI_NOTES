@@ -384,7 +384,7 @@ if __name__=="__main__":
 <div id="label_map_util.convert_label_map_to_categories"></div>
 
 ## label_map_util.convert_label_map_to_categories
-label_map_util.convert_label_map_to_categories(label_map,max_num_classes,use_display_name=True)
+### label_map_util.convert_label_map_to_categories(label_map,max_num_classes,use_display_name=True)
 此函数转换标签映射proto并返回一个多字典列表，每个字典都有以下键:<br>
 'id':(必需) 唯一标识此类别的整数ID<br>
 'name':(必需)表示类别名称的字符串，例如'猫','狗','披萨'<br>
@@ -402,3 +402,4 @@ categories=label_map_utils.convert_label_map_to_categories(labelMap,max_num_clas
 categories=[{'id':1,'name':'pedestrianCrossing'},
 	    {'id':2,'name':'signalAhead'},
 	    {'id':3,'name':'stop'}]
+```
