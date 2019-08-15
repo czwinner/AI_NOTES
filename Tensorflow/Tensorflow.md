@@ -248,6 +248,7 @@ In [10]: writer.write(example.SerializeToString())
 In [11]: writer.close()
 ```
 
+
 <div id="图和会话"></div>
 
 ## 图和会话
@@ -268,3 +269,21 @@ Tensorflow程序都以数据流图构建阶段开始。在此阶段，会调用T
 ### 命名空间
 tf.Graph对象会定义一个命名空间（为其包含的tf.Operation对象)。Tensorflow会自动为图中的每个指令选择一个唯一名称，但也可以指定描述性名称。Tensorflow API提供两种方法来覆盖操作名称:<br>
 * 如果API函数会创建新的tf.Operation或返回新的tf.Tensor,则会接受name参数。例如,tf.constant(42.0,name="answer")会创建一个新的tf.Operation(名为"answer")并返回一个tf.Tensor(名为"answer:0")，如果默认图已包含名为"answer"的操作，则Tensorflow会在名称上附加"_1","_2"等字符，以便让名称具有唯一性。
+* 借助tf.name_scope函数，可以向在特定上下文中创建的所有操作添加名称作用域前缀。当前名称作用域前缀是一个用"/"分隔的名称列表，其中包含所有活跃tf.name_scope上下文管理器的名称。如果某个名称作用域已在当前上下文中被占用，Tensorflow将在该作用域上附加"_1","_2"等字符。例如:
+```python
+c_0 = tf.constant(0, name="c") # => operation named "c_1"
+# 已经使用的名称
+c_1 = tf.constant(2, name="c") # => operation "c_1"
+# name scopes为在同一上下文中创建的所有操作添加前缀
+with tf.name_scope("outer"):
+	c_2 = tf.constant(2, name="c") # => operation named "outer/c"
+	# name scopes 嵌套
+	with tf.name_scope("inner"):
+		c_3 = tf.constant(3, name="c") # => operation named "outer/inner/c"
+	# 退出 name_scope将返回上一个前缀
+	c_4 = tf.constant(4, name="c") # => operation named "outer/c_1"
+	# 已经使用过inner的作用域
+	with tf.name_scope("inner"):
+		c_5 = tf.constant(5, name="c") # => operation named "outer/inner_1/c"
+```
+	
