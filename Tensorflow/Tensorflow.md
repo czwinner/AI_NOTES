@@ -4,6 +4,7 @@
 # [图和会话](#graph_session)
 # [tf.gfile.Gfile](#tf.gfile.Gfile)
 # [加载pb模型](#load_pb)
+# [label_map_util.convert_label_map_to_categories](#label_map_util.convert_label_map_to_categories)
 <div id="TFRecord_Writer"></div>
 
 ## class TFRecordWriter
@@ -380,3 +381,24 @@ if __name__=="__main__":
 		print(y_out)
 ```
 	
+<div id="label_map_util.convert_label_map_to_categories"></div>
+
+## label_map_util.convert_label_map_to_categories
+label_map_util.convert_label_map_to_categories(label_map,max_num_classes,use_display_name=True)
+此函数转换标签映射proto并返回一个多字典列表，每个字典都有以下键:<br>
+'id':(必需) 唯一标识此类别的整数ID<br>
+'name':(必需)表示类别名称的字符串，例如'猫','狗','披萨'<br>
+### 参数
+* label_map:StringIntLabelMapProto或None。如果为None,则使用max_num_classes类别创建默认类别列表。
+* max_num_classes:要包括的最大标签索引数
+* use_display_name:(boolean)选择是否将"display_name"字段作为类别名称加载。如果为False或者display_name字段不存在。则使用"name"字段作为类别名称。
+### 返回
+categories:表示所有可能类别的字典列表
+### 例子
+'''python
+from object_detection.utils import label_map_util
+categories=label_map_utils.convert_label_map_to_categories(labelMap,max_num_classes=3,use_display_name=True)
+结果:
+categories=[{'id':1,'name':'pedestrianCrossing'},
+	    {'id':2,'name':'signalAhead'},
+	    {'id':3,'name':'stop'}]
