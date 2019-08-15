@@ -3,7 +3,7 @@
 # [TFRecord](#TF_Record)
 # [图和会话](#graph_session)
 # [tf.gfile.Gfile](#tf.gfile.Gfile)
-
+# [加载pb模型](#load_pb)
 <div id="TFRecord_Writer"></div>
 
 ## class TFRecordWriter
@@ -352,3 +352,31 @@ with tf.Session() as sess:
 * n:如果n != -1,则读取n个字节。如果n = -1则读取到文件末尾。
 ### 返回:
 字节模式下文件的n个字节。
+
+<div id="load_pb"></div>
+
+## 加载pb模型
+1.通过tf.gfile.Gfile打开模型。<br>
+2.通过tf.GraphDef.ParseFromString得到模型中的图和变量数据。<br>
+3.通过tf.import_graph_def加载目前的图<br>
+4.拿到输入节点和输出节点tensor并进行预测。<br>
+```python
+import tensorflow as tf
+def load_graph(model_dir):
+with tf.gfile.Gfile(model_dir,"rb") as f: #获取模型数据
+	graph_def=tf.GraphDef()
+	graph_def.ParseFromString(f.read()) #得到模型中的计算图和数据
+	with tf.Graph().as_default() as graph: #这里Graph()要有括号，不然会报错
+		tf.import_graph_def(graph_def,name="michael") #导入模型中的图到现在这个新的计算图中
+		return graph
+if __name__=="__main__":
+	graph=load_graph("model/pb/frozen_model.pb") #传入的是完整的路径包括pb的名字
+	for op in graph.get_operations(): #打印出图中的节点信息
+		print(op.name,op.values())
+	x=graph.get_tensor_by_name('michael/input_holder:0') #得到输入节点tensor的名字，记得跟上导入图时指定的name
+	y=graph.get_tensor_by_name('michael/prediction:0') #得到输出节点tensor的名字
+	with tf.Session(graph=graph) as sess: #创建会话
+		y_out=sess.run(y,feed_dict={x:[10.0]})
+		print(y_out)
+```
+	
