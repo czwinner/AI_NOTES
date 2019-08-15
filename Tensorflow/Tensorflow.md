@@ -1,7 +1,7 @@
 # [TFRecordWriter](#TFRecord_Writer)
 # [int64_feature,bytes_feature,float_list_feature,bytes_list_feature,int64_list_feature](#int64_feature)
 # [TFRecord](#TF_Record)
-# [图和会话](#图和会话)
+# [图和会话](#graph_session)
 
 <div id="TFRecord_Writer"></div>
 
@@ -249,7 +249,7 @@ In [11]: writer.close()
 ```
 
 
-<div id="图和会话"></div>
+<div id="graph_session"></div>
 
 ## 图和会话
 Tensorflow使用数据流图将计算表示为独立的指令之间的依赖关系。首先定义数据流图，然后创建Tensorflow会话，以便在一组本地和远程设备上运行图的各个部分。<br>
