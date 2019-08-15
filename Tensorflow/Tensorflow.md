@@ -395,7 +395,7 @@ if __name__=="__main__":
 ### 返回
 categories:表示所有可能类别的字典列表
 ### 例子
-'''python
+```python
 from object_detection.utils import label_map_util
 categories=label_map_utils.convert_label_map_to_categories(labelMap,max_num_classes=3,use_display_name=True)
 结果:
