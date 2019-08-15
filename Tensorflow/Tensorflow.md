@@ -2,6 +2,7 @@
 # [int64_feature,bytes_feature,float_list_feature,bytes_list_feature,int64_list_feature](#int64_feature)
 # [TFRecord](#TF_Record)
 # [图和会话](#graph_session)
+# [tf.gfile.Gfile](#tf.gfile.Gfile)
 
 <div id="TFRecord_Writer"></div>
 
@@ -341,3 +342,7 @@ with tf.Session() as sess:
   sess.run(y, {x: 37.0})
 ```
 
+<div id="tf.gfile.GFile"</div>
+
+## tf.gfile.Gfile(filename,mode)
+获取文本操作句柄，类似于python提供的文本操作open()函数，filename是要打开的文件名，mode是以何种方式去读写，将会返回一个文本操作句柄。<br>
