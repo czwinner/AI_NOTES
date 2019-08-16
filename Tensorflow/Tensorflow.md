@@ -5,6 +5,7 @@
 # [tf.gfile.Gfile](#tf.gfile.Gfile)
 # [加载pb模型](#load_pb)
 # [label_map_util.convert_label_map_to_categories](#label_map_util.convert_label_map_to_categories)
+# [tf.graph().get_tensor_by_name](#get_tensor_by_name)
 <div id="TFRecord_Writer"></div>
 
 ## class TFRecordWriter
@@ -403,3 +404,12 @@ categories=[{'id':1,'name':'pedestrianCrossing'},
 	    {'id':2,'name':'signalAhead'},
 	    {'id':3,'name':'stop'}]
 ```
+
+<div id="get_tensor_by_name"></div>
+
+## get_tensor_by_name(name)
+返回具有给定名称的Tensor
+### 参数
+* name:要返回的Tensor的名称
+### 返回:
+具有给定名称的Tensor
