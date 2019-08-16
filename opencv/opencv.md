@@ -66,4 +66,4 @@ flags:可以采用cv::ImreadModels值的标志
 * color:矩形的颜色
 * thickness:构成矩形的线条的粗细。负值表示绘制填充矩形。
 * lineType:线的类型
-* shift:点坐标
+* shift:点坐标中的小数位数
