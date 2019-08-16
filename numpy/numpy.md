@@ -1,6 +1,7 @@
 # [numpy.loadtxt](#numpy.loadtxt)  
 # [numpy.random.uniform](#numpy.random.uniform)
 # [numpy.expand_dims](#numpy.expand_dims)
+# [numpy.squeeze](#numpy.squeeze)
 <div id="numpy.loadtxt"></div>
 
 ## numpy.loadtxt(fname,dtype=float,comments='#',delimiter=None,converters=None,skiprows=0,usecols=None,unpack=False,ndim=0,encoding='bytes',max_rows=None)**  
@@ -66,4 +67,32 @@ array([[1],
        [2]])
 >>>y.shape
 (2,1)
+```
+
+<div id="numpy.squeeze"</div>
+
+## numpy.squeeze(a,axis=None)
+从数组的形状中删除维度为1的条目
+### 参数
+* a:array_like
+输入数据
+* axis:None or int or tuple of ints,optional
+选择删除维度为1的轴。如果选择的维度大于1，则引发错误。
+### 返回: squeezed:ndarray
+删除了维度1后的数组
+### 例子
+```python
+>>> x = np.array([[[0], [1], [2]]])
+>>> x.shape
+(1, 3, 1)
+>>> np.squeeze(x).shape
+(3,)
+>>> np.squeeze(x, axis=0).shape
+(3, 1)
+>>> np.squeeze(x, axis=1).shape
+Traceback (most recent call last):
+...
+ValueError: cannot select an axis to squeeze out which has size not equal to one
+>>> np.squeeze(x, axis=2).shape
+(1, 3)
 ```
