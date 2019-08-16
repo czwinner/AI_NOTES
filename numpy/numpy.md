@@ -44,9 +44,9 @@ array([[2.19447438,6.93675292,6.94288899],
 ## numpy.expand_dims(a,axis)
 插入新轴
 ### 参数
-* a:array_like
+* a:array_like<br>
 输入数组
-* axis:int
+* axis:int<br>
 新轴放置的位置
 ### 返回
 扩展后的新轴
