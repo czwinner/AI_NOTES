@@ -2,6 +2,7 @@
 # [cv.imwrite](#imwrite)
 # [cv.resize](#resize)
 # [cv.imread](#imread)
+# [cv.cvtColor](#cvtColor)
 <div id="videocapture"></div>
 
 ## cv.VideoCapture(src)
@@ -42,3 +43,13 @@
 ### 参数
 filename:要加载的文件的名称
 flags:可以采用cv::ImreadModels值的标志
+
+<div id="cvtColor"></div>
+
+## cv.cvtColor(src,code,dst,dstCn)
+将图像从一个颜色空间转换为另一个颜色空间。Opencv默认颜色格式为RGB，但它实际上是BGR。因此标准(24位)彩色图像中的第一个字节是8位蓝色分量，第二个字节将为绿色，第二个字节将为红色。
+### 参数
+* src:输入图像
+* dst:输出与src相同大小和深度的图像
+* code:色彩空间转换代码
+* dstCn:目标图像中的通道数，如果为0,则从src和代码自动导出通道数。
