@@ -1,6 +1,7 @@
 # [cv.VideoCapture](#videocapture)
 # [cv.imwrite](#imwrite)
 # [cv.resize](#resize)
+# [cv.imread](#imread)
 <div id="videocapture"></div>
 
 ## cv.VideoCapture(src)
@@ -33,3 +34,11 @@
 
 返回：
 调整后的图像
+
+<div id="imread"></div>
+
+## cv.imread(filename,flags)
+从文件加载图像，如果无法读取图像则返空
+### 参数
+filename:要加载的文件的名称
+flags:可以采用cv::ImreadModels值的标志
