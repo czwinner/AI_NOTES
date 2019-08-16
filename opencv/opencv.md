@@ -3,6 +3,7 @@
 # [cv.resize](#resize)
 # [cv.imread](#imread)
 # [cv.cvtColor](#cvtColor)
+# [cv.rectangle](#rectangle)
 <div id="videocapture"></div>
 
 ## cv.VideoCapture(src)
@@ -53,3 +54,16 @@ flags:可以采用cv::ImreadModels值的标志
 * dst:输出与src相同大小和深度的图像
 * code:色彩空间转换代码
 * dstCn:目标图像中的通道数，如果为0,则从src和代码自动导出通道数。
+
+<div id="rectangle"></div>
+
+## cv.rectangle(img,pt1,pt2,color,thickness,lineType,shift)
+绘制矩形
+### 参数
+* img:图像
+* pt1:左上角坐标
+* pt2:右下角坐标
+* color:矩形的颜色
+* thickness:构成矩形的线条的粗细。负值表示绘制填充矩形。
+* lineType:线的类型
+* shift:点坐标
