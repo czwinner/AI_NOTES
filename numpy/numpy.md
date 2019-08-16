@@ -1,8 +1,9 @@
-## [numpy.loadtxt](#numpy.loadtxt)  
-## [numpy.random.uniform](#numpy.random.uniform)
+# [numpy.loadtxt](#numpy.loadtxt)  
+# [numpy.random.uniform](#numpy.random.uniform)
+# [numpy.expand_dims](#numpy.expand_dims)
 <div id="numpy.loadtxt"></div>
 
-**numpy.loadtxt(fname,dtype=float,comments='#',delimiter=None,converters=None,skiprows=0,usecols=None,unpack=False,ndim=0,encoding='bytes',max_rows=None)**  
+## numpy.loadtxt(fname,dtype=float,comments='#',delimiter=None,converters=None,skiprows=0,usecols=None,unpack=False,ndim=0,encoding='bytes',max_rows=None)**  
 
 从文本文件中加载数据  
 **参数:**  
@@ -36,4 +37,33 @@ np.random.uniform(low=0.0,high=10.0,size=(2,3))
 输出：
 array([[2.19447438,6.93675292,6.94288899],
        [0.32986697,6.71316174,3.60521754]])
+```
 
+<div id="numpy.expand_dims"></div>
+
+## numpy.expand_dims(a,axis)
+插入新轴
+### 参数
+* a:array_like
+输入数组
+* axis:int
+新轴放置的位置
+### 返回
+扩展后的新轴
+### 例子
+```python
+>>>x=np.array([1,2])
+>>>x.shape
+(2,)
+>>>y=np.expand_dims(x,axis=0)
+>>>y
+array([[1,2]])
+>>>y.shape
+(1,2)
+>>>y=np.expand_dims(x,axis=1)
+>>>y
+array([[1],
+       [2]])
+>>>y.shape
+(2,1)
+```
